@@ -37,21 +37,20 @@
 
     <body>
       <div id="phizzForm" class="form" style="background-color: rgb(237, 239, 241); height: 554px;">
-            <form action="apply" method="post" style="height: 504px;">
+            <form action="form" method="post" style="height: 504px;">
                 <div class="formPanel">
                         <h1>加入我们吧！</h1>
                         <h2>百度俱乐部2015纳新报名表</h2>
                         <div class="formNotice">
                             <h3  class="icon-check">注意事项：</h3>
                             <ul>
-                                <li>9月26、27日三大学园宣传</li>
-                                <li>9月28日文广宣传</li>
-                                <li>截止时间：10月9日</li>
+                                <li>报名截止时间：3月27号18点</li>
                                 <li>面试时间：请等待短信通知</li>
                                 <li>联系我们：15868119798 552743 喻同学</li>
                                 <li>备注：若有作品（内容不限，可以是文章，图片，代码等来证明自己的能力），请打包压缩发至zjubaidu@126.com，注明姓名等信息</li>
                             </ul>
                         </div>
+                        <font color="red"><?php echo validation_errors(); ?></font>
                         <div class="errors"><i class="icon-exclamation-sign"></i>
                             Oops! You've entered some incorrect details.</div>
                         <button type="button" id="mstart">点击填写报名表</button>
@@ -70,7 +69,7 @@
                         <div class="formRow">
                             <label for="name">姓名</label>
                             <span class="inputAddOn" style="background-color: rgb(46, 204, 113);"><i class="icon-user-1" style="color: rgb(255, 255, 255);"></i></span>
-                            <input type="text" placeholder="姓名" name="uname" id="name">
+                            <input type="text" placeholder="姓名" name="uname" id="name" value="<?php echo set_value('uname') ?>">
                             <div class="tooltip" style="background-color: rgb(52, 73, 94); top: -69px;"><p>请输入你的姓名</p><i class="icon-caret-down" style="color: rgb(52, 73, 94);"></i></div>
                         </div>
 
@@ -99,13 +98,13 @@
                          <div class="formRow">
                             <label for="profession">专业</label>
                             <span class="inputAddOn" style="background-color: rgb(46, 204, 113);"><i class="icon-book" style="color: rgb(255, 255, 255);"></i></span>
-                            <input type="text" value="" placeholder="专业/大类" name="major" id="profession">
+                            <input type="text" value="<?php echo set_value('major') ?>" placeholder="专业/大类" name="major" id="profession" >
                             <div class="tooltip" style="background-color: rgb(52, 73, 94); top: -69px;"><p>请输入你所在的专业 / 大类</p><i class="icon-caret-down" style="color: rgb(52, 73, 94);"></i></div>
                         </div>
                         <div class="formRow">
                             <label for="phoneNumber-1">手机</label>
                             <span class="inputAddOn" style="background-color: rgb(46, 204, 113);"><i class="icon-phone" style="color: rgb(255, 255, 255);"></i></span>
-                            <input type="tel" value="" placeholder="手机长号" name="longnum" id="phoneNumber-1">
+                            <input type="tel" value="<?php echo set_value('longnum') ?>" placeholder="手机长号" name="longnum" id="phoneNumber-1">
                             <div class="tooltip" style="background-color: rgb(52, 73, 94); top: -69px;"><p>输入你的手机长号</p><i class="icon-caret-down" style="color: rgb(52, 73, 94);"></i></div>
                         </div>
                         <div class="formRow">
@@ -188,12 +187,12 @@
                         <div class="formRow">
                             <label for="houseNumber">House number</label>
                             <span class="inputAddOn " style="background-color: rgb(46, 204, 113);"><i class="icon-star" style="color: rgb(255, 255, 255);"></i></span>
-                            <textarea name="featureshow" id="introduce" cols="30" rows="8">自我介绍及特长展示</textarea>
+                            <textarea name="featureshow" id="introduce" cols="30" rows="8" value="<?php echo set_value('featureshow') ?>">自我介绍及特长展示</textarea>
                         </div>
                         <div class="formRow">
                             <label for="favouriteDrink">Favourite drink</label>
                             <span class="inputAddOn" style="background-color: rgb(46, 204, 113);"><i class="icon-chat" style="color: rgb(255, 255, 255);"></i></span>
-                            <textarea name="understanding" id="advice" cols="30" rows="8">你希望从百度菁英俱乐部里获得什么</textarea>
+                            <textarea name="understanding" id="advice" cols="30" rows="8" value="<?php echo set_value('understanding') ?>">你希望从百度菁英俱乐部里获得什么</textarea>
                         </div>
 
 
